@@ -22,7 +22,7 @@
             ##  CURRENT WEATHER CONDITIONS BY ZIPCODE  ##
 
 $api_key = "#####"
-$current_place = "64012"
+$current_place = "zipcode"
 
 $uri = "http://api.weatherapi.com/v1/current.json?key=" + $api_key + "&q="+$current_place+ "&aqi=no"
 $current = Invoke-RestMethod -Uri $uri
@@ -54,7 +54,7 @@ Write-Output $obj}
 #####################################################################################################################
                     ##   WEATHER FORECAST BY ZIPCODE and UP TO 10 DAYS ##
 $api_key = '#####'
-$place = "62514"
+$place = "zipcode"
 $days = "5"
 
 $uriF = "http://api.weatherapi.com/v1/forecast.json?key="+ $api_key + "&q=" + $place + "&days=" + $days + "&aqi=no&alerts=no"
