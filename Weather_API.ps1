@@ -13,7 +13,7 @@
  that can draw in more air, intensifying the hurricane as the pressure continues to drop
 #>
 
-<#API_KEY 0b3d6e2ac8714083b76151636240607#>
+<#API_KEY ######>
 
 
 
@@ -21,7 +21,7 @@
 #####################################################################################################################
             ##  CURRENT WEATHER CONDITIONS BY ZIPCODE  ##
 
-$api_key = "0b3d6e2ac8714083b76151636240607"
+$api_key = "#####"
 $current_place = "64012"
 
 $uri = "http://api.weatherapi.com/v1/current.json?key=" + $api_key + "&q="+$current_place+ "&aqi=no"
@@ -53,7 +53,7 @@ Write-Output $obj}
 #####################################################################################################################
 #####################################################################################################################
                     ##   WEATHER FORECAST BY ZIPCODE and UP TO 10 DAYS ##
-$api_key = '0b3d6e2ac8714083b76151636240607'
+$api_key = '#####'
 $place = "62514"
 $days = "5"
 
@@ -80,9 +80,9 @@ Write-Output $obj_f}
 #####################################################################################################################
 #####################################################################################################################
                                  ##   WEATHER ALERTS BY ZIPCODE and UP TO 10 DAYS ##
-#http://api.weatherapi.com/v1/forecast.json?key=0b3d6e2ac8714083b76151636240607&q=77005&days=5&aqi=no&alerts=yes
+#http://api.weatherapi.com/v1/forecast.json?key=#####&q=77005&days=5&aqi=no&alerts=yes
 
-$api_key = '0b3d6e2ac8714083b76151636240607'
+$api_key = '####'
 $place = "sugar%20land"
 $days = "5"
 
@@ -105,10 +105,10 @@ $obj_alert = New-Object -TypeName PSObject -Property $properties
 Write-Output $obj_alert}
 #####################################################################################################################
 #####################################################################################################################
-#http://api.weatherapi.com/v1/sports.json?key=0b3d6e2ac8714083b76151636240607&q=64114
+#http://api.weatherapi.com/v1/sports.json?key=####&q=64114
                                      ##   FOOTBALL EVENTS BY ZIPCODE ##
 
-$api_key = '0b3d6e2ac8714083b76151636240607'
+$api_key = '#####'
 $place = "77005"
 
 
