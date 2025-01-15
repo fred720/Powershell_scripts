@@ -1,0 +1,683 @@
+    ------- Example 5: Start PowerShell as an administrator -------
+
+    Start-Process -FilePath "powershell" -Verb RunAs
+
+PS C:\Users\HOME> get-help Clear-Content -examples
+
+NAME
+    Clear-Content
+
+SYNOPSIS
+    Deletes the contents of an item, but does not delete the item.
+
+
+    -------- Example 1: Delete all content from a directory --------
+
+    Clear-Content "..\SmpUsers\*\init.txt"
+
+    This command deletes all of the content from the `init.txt` files in all subdirectories of the `SmpUsers`
+    directory. The files are not deleted, but they are empty.
+    ---- Example 2: Delete content of all files with a wildcard ----
+
+    Clear-Content -Path "*" -Filter "*.log" -Force
+
+    This command deletes the contents of all files in the current directory with the `.log` file name extension,
+    including files with the read-only attribute. The asterisk (`*`) in the path represents all items in the current
+    directory. The Force parameter makes the command effective on read-only files. Using a filter to restrict the
+    command to files with the `.log` file name extension instead of specifying `*.log` in the path makes the operation
+    faster.
+    ----------- Example 3: Clear all data from a stream -----------
+
+    Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+
+    [ZoneTransfer]
+    ZoneId=3
+
+    Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+    Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+
+
+Microsoft.PowerShell.Utility
+Add-Member	
+Adds custom properties and methods to an instance of a PowerShell object.
+
+Add-Type	
+Adds a Microsoft .NET class to a PowerShell session.
+
+Clear-Variable	
+Deletes the value of a variable.
+
+Compare-Object	
+Compares two sets of objects.
+
+ConvertFrom-Csv	
+Converts object properties in comma-separated value (CSV) format into CSV versions of the original objects.
+
+ConvertFrom-Json	
+Converts a JSON-formatted string to a custom object or a hash table.
+
+ConvertFrom-Markdown	
+Convert the contents of a string or a file to a MarkdownInfo object.
+
+ConvertFrom-SddlString	
+Converts a SDDL string to a custom object.
+
+ConvertFrom-StringData	
+Converts a string containing one or more key and value pairs to a hash table.
+
+ConvertTo-Csv	
+Converts .NET objects into a series of character-separated value (CSV) strings.
+
+ConvertTo-Html	
+Converts .NET objects into HTML that can be displayed in a Web browser.
+
+ConvertTo-Json	
+Converts an object to a JSON-formatted string.
+
+ConvertTo-Xml	
+Creates an XML-based representation of an object.
+
+Debug-Runspace	
+Starts an interactive debugging session with a runspace.
+
+Disable-PSBreakpoint	
+Disables the breakpoints in the current console.
+
+Disable-RunspaceDebug	
+Disables debugging on one or more runspaces, and releases any pending debugger stop.
+
+Enable-PSBreakpoint	
+Enables the breakpoints in the current console.
+
+Enable-RunspaceDebug	
+Enables debugging on runspaces where any breakpoint is preserved until a debugger is attached.
+
+Export-Alias	
+Exports information about currently defined aliases to a file.
+
+Export-Clixml	
+Creates an XML-based representation of an object or objects and stores it in a file.
+
+Export-Csv	
+Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a file.
+
+Export-FormatData	
+Saves formatting data from the current session in a formatting file.
+
+Export-PSSession	
+Exports commands from another session and saves them in a PowerShell module.
+
+Format-Custom	
+Uses a customized view to format the output.
+
+Format-Hex	
+Displays a file or other input as hexadecimal.
+
+Format-List	
+Formats the output as a list of properties in which each property appears on a new line.
+
+Format-Table	
+Formats the output as a table.
+
+Format-Wide	
+Formats objects as a wide table that displays only one property of each object.
+
+Get-Alias	
+Gets the aliases for the current session.
+
+Get-Culture	
+Gets the current culture set in the operating system.
+
+Get-Date	
+Gets the current date and time.
+
+Get-Error	
+Gets and displays the most recent error messages from the current session.
+
+Get-Event	
+Gets the events in the event queue.
+
+Get-EventSubscriber	
+Gets the event subscribers in the current session.
+
+Get-FileHash	
+Computes the hash value for a file by using a specified hash algorithm.
+
+Get-FormatData	
+Gets the formatting data in the current session.
+
+Get-Host	
+Gets an object that represents the current host program.
+
+Get-MarkdownOption	
+Returns the current colors and styles used for rendering Markdown content in the console.
+
+Get-Member	
+Gets the properties and methods of objects.
+
+Get-PSBreakpoint	
+Gets the breakpoints that are set in the current session.
+
+Get-PSCallStack	
+Displays the current call stack.
+
+Get-Random	
+Gets a random number, or selects objects randomly from a collection.
+
+Get-Runspace	
+Gets active runspaces within a PowerShell host process.
+
+Get-RunspaceDebug	
+Shows runspace debugging options.
+
+Get-TraceSource	
+Gets PowerShell components that are instrumented for tracing.
+
+Get-TypeData	
+Gets the extended type data in the current session.
+
+Get-UICulture	
+Gets the current UI culture settings in the operating system.
+
+Get-Unique	
+Returns unique items from a sorted list.
+
+Get-Uptime	
+Get the TimeSpan since last boot.
+
+Get-Variable	
+Gets the variables in the current console.
+
+Get-Verb	
+Gets approved PowerShell verbs.
+
+Group-Object	
+Groups objects that contain the same value for specified properties.
+
+Import-Alias	
+Imports an alias list from a file.
+
+Import-Clixml	
+Imports a CLIXML file and creates corresponding objects in PowerShell.
+
+Import-Csv	
+Creates table-like custom objects from the items in a comma-separated value (CSV) file.
+
+Import-LocalizedData	
+Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
+
+Import-PowerShellDataFile	
+Imports values from a .PSD1 file without invoking its contents.
+
+Import-PSSession	
+Imports commands from another session into the current session.
+
+Invoke-Expression	
+Runs commands or expressions on the local computer.
+
+Invoke-RestMethod	
+Sends an HTTP or HTTPS request to a RESTful web service.
+
+Invoke-WebRequest	
+Gets content from a web page on the internet.
+
+Join-String	
+Combines objects from the pipeline into a single string.
+
+Measure-Command	
+Measures the time it takes to run script blocks and cmdlets.
+
+Measure-Object	
+Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
+
+New-Alias	
+Creates a new alias.
+
+New-Event	
+Creates a new event.
+
+New-Guid	
+Creates a GUID.
+
+New-Object	
+Creates an instance of a Microsoft .NET Framework or COM object.
+
+New-TemporaryFile	
+Creates a temporary file.
+
+New-TimeSpan	
+Creates a TimeSpan object.
+
+New-Variable	
+Creates a new variable.
+
+Out-File	
+Sends output to a file.
+
+Out-GridView	
+Sends output to an interactive table in a separate window.
+
+Out-Printer	
+Sends output to a printer.
+
+Out-String	
+Outputs input objects as a string.
+
+Read-Host	
+Reads a line of input from the console.
+
+Register-EngineEvent	
+Subscribes to events that are generated by the PowerShell engine and by the New-Event cmdlet.
+
+Register-ObjectEvent	
+Subscribes to the events that are generated by a Microsoft .NET Framework object.
+
+Remove-Alias	
+Remove an alias from the current session.
+
+Remove-Event	
+Deletes events from the event queue.
+
+Remove-PSBreakpoint	
+Deletes breakpoints from the current console.
+
+Remove-TypeData	
+Deletes extended types from the current session.
+
+Remove-Variable	
+Deletes a variable and its value.
+
+Select-Object	
+Selects objects or object properties.
+
+Select-String	
+Finds text in strings and files.
+
+Select-Xml	
+Finds text in an XML string or document.
+
+Send-MailMessage	
+Sends an email message.
+
+Set-Alias	
+Creates or changes an alias for a cmdlet or other command in the current PowerShell session.
+
+Set-Date	
+Changes the system time on the computer to a time that you specify.
+
+Set-MarkdownOption	
+Sets the colors and styles used for rendering Markdown content in the console.
+
+Set-PSBreakpoint	
+Sets a breakpoint on a line, command, or variable.
+
+Set-TraceSource	
+Configures, starts, and stops a trace of PowerShell components.
+
+Set-Variable	
+Sets the value of a variable. Creates the variable if one with the requested name does not exist.
+
+Show-Command	
+Displays PowerShell command information in a graphical window.
+
+Show-Markdown	
+Shows a Markdown file or string in the console in a friendly way using VT100 escape sequences or in a browser using HTML.
+
+Sort-Object	
+Sorts objects by property values.
+
+Start-Sleep	
+Suspends the activity in a script or session for the specified period of time.
+
+Tee-Object	
+Saves command output in a file or variable and also sends it down the pipeline.
+
+Test-Json	
+Tests whether a string is a valid JSON document
+
+Trace-Command	
+Configures and starts a trace of the specified expression or command.
+
+Unblock-File	
+Unblocks files that were downloaded from the internet.
+
+Unregister-Event	
+Cancels an event subscription.
+
+Update-FormatData	
+Updates the formatting data in the current session.
+
+Update-List	
+Adds items to and removes items from a property value that contains a collection of objects.
+
+Update-TypeData	
+Updates the extended type data in the session.
+
+Wait-Debugger	
+Stops a script in the debugger before running the next statement in the script.
+
+Wait-Event	
+Waits until a particular event is raised before continuing to run.
+
+Write-Debug	
+Writes a debug message to the console.
+
+Write-Error	
+Writes an object to the error stream.
+
+Write-Host	
+Writes customized output to a host.
+
+Write-Information	
+Specifies how PowerShell handles information stream data for a command.
+
+Write-Output	
+Writes the specified objects to the pipeline. If Write-Output is the last command in the pipeline, the objects are displayed in the console.
+
+Write-Progress	
+Displays a progress bar within a PowerShell command window.
+
+Write-Verbose	
+Writes text to the verbose message stream.
+
+Write-Warning	
+Writes a warning message.
+
+Microsoft.PowerShell.Management
+Add-Content	
+Adds content to the specified items, such as adding words to a file.
+
+Clear-Content	
+Deletes the contents of an item, but does not delete the item.
+
+Clear-Item	
+Clears the contents of an item, but does not delete the item.
+
+Clear-ItemProperty	
+Clears the value of a property but does not delete the property.
+
+Clear-RecycleBin	
+Clears the contents of a recycle bin.
+
+Convert-Path	
+Converts a path from a PowerShell path to a PowerShell provider path.
+
+Copy-Item	
+Copies an item from one location to another.
+
+Copy-ItemProperty	
+Copies a property and value from a specified location to another location.
+
+Debug-Process	
+Debugs one or more processes running on the local computer.
+
+Get-ChildItem	
+Gets the items and child items in one or more specified locations.
+
+Get-Clipboard	
+Gets the contents of the clipboard.
+
+Get-ComputerInfo	
+Gets a consolidated object of system and operating system properties.
+
+Get-Content	
+Gets the content of the item at the specified location.
+
+Get-HotFix	
+Gets the hotfixes that are installed on local or remote computers.
+
+Get-Item	
+Gets the item at the specified location.
+
+Get-ItemProperty	
+Gets the properties of a specified item.
+
+Get-ItemPropertyValue	
+Gets the value for one or more properties of a specified item.
+
+Get-Location	
+Gets information about the current working location or a location stack.
+
+Get-Process	
+Gets the processes that are running on the local computer.
+
+Get-PSDrive	
+Gets drives in the current session.
+
+Get-PSProvider	
+Gets information about the specified PowerShell provider.
+
+Get-Service	
+Gets the services on the computer.
+
+Get-TimeZone	
+Gets the current time zone or a list of available time zones.
+
+Invoke-Item	
+Performs the default action on the specified item.
+
+Join-Path	
+Combines a path and a child path into a single path.
+
+Move-Item	
+Moves an item from one location to another.
+
+Move-ItemProperty	
+Moves a property from one location to another.
+
+New-Item	
+Creates a new item.
+
+New-ItemProperty	
+Creates a new property for an item and sets its value.
+
+New-PSDrive	
+Creates temporary and persistent drives that are associated with a location in an item data store.
+
+New-Service	
+Creates a new Windows service.
+
+Pop-Location	
+Changes the current location to the location most recently pushed onto the stack.
+
+Push-Location	
+Adds the current location to the top of a location stack.
+
+Remove-Item	
+Deletes the specified items.
+
+Remove-ItemProperty	
+Deletes the property and its value from an item.
+
+Remove-PSDrive	
+Deletes temporary PowerShell drives and disconnects mapped network drives.
+
+Remove-Service	
+Removes a Windows service.
+
+Rename-Computer	
+Renames a computer.
+
+Rename-Item	
+Renames an item in a PowerShell provider namespace.
+
+Rename-ItemProperty	
+Renames a property of an item.
+
+Resolve-Path	
+Resolves the wildcard characters in a path, and displays the path contents.
+
+Restart-Computer	
+Restarts the operating system on local and remote computers.
+
+Restart-Service	
+Stops and then starts one or more services.
+
+Resume-Service	
+Resumes one or more suspended (paused) services.
+
+Set-Clipboard	
+Sets the contents of the clipboard.
+
+Set-Content	
+Writes new content or replaces existing content in a file.
+
+Set-Item	
+Changes the value of an item to the value specified in the command.
+
+Set-ItemProperty	
+Creates or changes the value of a property of an item.
+
+Set-Location	
+Sets the current working location to a specified location.
+
+Set-Service	
+Starts, stops, and suspends a service, and changes its properties.
+
+Set-TimeZone	
+Sets the system time zone to a specified time zone.
+
+Split-Path	
+Returns the specified part of a path.
+
+Start-Process	
+Starts one or more processes on the local computer.
+
+Start-Service	
+Starts one or more stopped services.
+
+Stop-Computer	
+Stops (shuts down) local and remote computers.
+
+Stop-Process	
+Stops one or more running processes.
+
+Stop-Service	
+Stops one or more running services.
+
+Suspend-Service	
+Suspends (pauses) one or more running services.
+
+Test-Connection	
+Sends ICMP echo request packets, or pings, to one or more computers.
+
+Test-Path	
+Determines whether all elements of a path exist.
+
+Wait-Process	
+Waits for the processes to be stopped before accepting more input.
+
+Microsoft.PowerShell.Security
+
+
+ConvertFrom-SecureString	
+Converts a secure string to an encrypted standard string.
+
+ConvertTo-SecureString	
+Converts plain text or encrypted strings to secure strings.
+
+Get-Acl	
+Gets the security descriptor for a resource, such as a file or registry key.
+
+Get-AuthenticodeSignature	
+Gets information about the Authenticode signature for a file.
+
+Get-CmsMessage	
+Gets content that has been encrypted by using the Cryptographic Message Syntax format.
+
+Get-Credential	
+Gets a credential object based on a user name and password.
+
+Get-ExecutionPolicy	
+Gets the execution policies for the current session.
+
+Get-PfxCertificate	
+Gets information about PFX certificate files on the computer.
+
+New-FileCatalog	
+New-FileCatalog creates a catalog file of file hashes that can be used to validate the authenticity of a file.
+
+Protect-CmsMessage	
+Encrypts content by using the Cryptographic Message Syntax format.
+
+Set-Acl	
+Changes the security descriptor of a specified item, such as a file or a registry key.
+
+Set-AuthenticodeSignature	
+Adds an Authenticode signature to a PowerShell script or other file.
+
+Set-ExecutionPolicy	
+Sets the PowerShell execution policies for Windows computers.
+
+Test-FileCatalog	
+Test-FileCatalog validates whether the hashes contained in a catalog file (.cat) matches the hashes of the actual files in order to validate their authenticity.
+
+This cmdlet is only supported on Windows.
+
+Unprotect-CmsMessage	
+Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
+
+
+
+stop-process -id 13236 -confirm -passthru
+
+
+get-windowsdriver -online -all
+
+
+export-
+
+get-help
+get-command
+get-member
+get-date | get-member
+
+find-module -tag name of module
+
+Set-ExecutionPolicy [-ExecutionPolicy] {AllSigned | Bypass | Default | RemoteSigned | Restricted | Undefined |Unrestricted}] {AllSigned | Bypass | Default | RemoteSigned | Restricted | Undefined | Unrestricted}
+
+#____________________________________________________________
+# https://www.techthoughts.info/powershell-scripts/
+#____________________________________________________________
+
+#region links
+
+#About Execution Policies
+#https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6
+
+#About Scripts
+#https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6
+
+#endregion
+
+#region running scripts
+
+#get the execution policy of all scopes in the order of precedence
+Get-ExecutionPolicy -List
+
+#change execution policy
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+#unblock a script downloaded from the internet after you have read and understood the code
+Unblock-File -Path .\drive_warn.ps1
+
+#run a local script
+.\drive_warn.ps1
+
+#run a local script in the current scope
+. .\drive_warn.ps1
+
+#endregion
+
+#region script example
+
+
+
+get-help Get-NetAdapter -Examples
+
+Get-NetAdapter -Name *
+Get-NetAdapter | Get-Member
+Get-NetAdapter | Format-List
+
+LinkSpeed(Mbps)
+Get-NetAdapter
