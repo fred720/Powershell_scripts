@@ -127,4 +127,37 @@ $obj_sport = New-Object -TypeName PSObject -Property $properties
 Write-Output $obj_sport}
 #####################################################################################################################
 #####################################################################################################################
+                           #### EARTHQUAKES IN THE PAST 24 HRS ##########
+
+function Get-Earthquake
+{
+    [CmdletBinding()]
+    [Alias('earthquakes')]
+    Param
+    (
+        [Parameter(Mandatory=$false,ValueFromPipeline=$true,ValueFromPipelineByPropertyName=$true)]
+        [string]$starttime = (Get-Date).AddHours.(-24).ToString("yyyy-MM-dd HH:mm:ss")
+    )
+
+    Begin
+    {
+        clear-host
+    }
+    Process
+    {
+        $uri = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson"
+        $uri += "&starttime=$starttime"
+        $uri += "&minmagnitude=4"
+        $request = Invoke-RestMethod $uri
+
+        $request.features.properties | ForEach-Object {
+            $_.time = (Get-Date -Date (New-Object DateTime 1970,1,1,0,0,0,([DateTimeKind]::Utc))).AddMilliseconds($_.time).ToString("yyyy-MM-dd hh:mm:ss tt")
+            $_.updated = (Get-Date -Date (New-Object DateTime 1970,1,1,0,0,0,([DateTimeKind]::Utc))).AddMilliseconds($_.updated).ToString("yyyy-MM-dd hh:mm:ss tt")
+            $_
+        } | select mag,title,place,type,detail,time,updated | Sort-Object mag
+    }
+    End
+    {
+    }
+}
 
